@@ -1,0 +1,84 @@
+package I9;
+//Crear clase Rectangulo y atributos base,altura,x,y.
+public class Rectangulo {
+    private float base;
+    private float altura;
+    private float x;
+    private float y;
+//Constructores
+    public Rectangulo(float base, float altura, float x, float y) {
+        this.base = base;
+        this.altura = altura;
+        this.x = x;
+        this.y = y;
+    }
+    public Rectangulo(float base, float altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+    public Rectangulo(float base) {
+        this.base = base;
+    }
+    public Rectangulo (){
+    }
+//MetodosGettersySetters
+    public float getBase() {
+        return base;
+    }
+    public void setBase(float base) {
+        this.base = base;
+    }
+    public float getAltura() {
+        return altura;
+    }
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+    public float getX() {
+        return x;
+    }
+    public void setX(float x) {
+        this.x = x;
+    }
+    public float getY() {
+        return y;
+    }
+    public void setY(float y) {
+        this.y = y;
+    }
+    //Otros metodos
+    public float getArea() {  
+        return base * altura;
+    }  
+    
+    public float getPerimetro() {
+        return 2 * (base * altura);
+    }
+    //Otros metodos
+    public void agranda(float aumentaBase,float aumentaAltura){
+        this.base += aumentaBase;
+        this.altura += aumentaAltura;
+    }
+    public void agranda(float valor){ 
+        agranda(valor,valor);
+    }
+    public void agranda(){   
+         agranda(1, 1);
+    }
+    //Constructor-copia
+    public Rectangulo(Rectangulo rectangulo) {
+        this.base = rectangulo.base;
+        this.altura = rectangulo.altura;
+        this.x = rectangulo.x;
+        this.y = rectangulo.y;}
+    
+    @Override
+    public String toString() {
+        return "base=" + base + ", altura=" + altura + ", x=" + x + ", y=" + y;
+    }
+    
+}
+    
+   
+    
+
