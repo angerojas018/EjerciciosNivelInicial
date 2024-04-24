@@ -1,0 +1,61 @@
+package K11;
+
+public class Alumno {
+    private String Nombre;
+    private double[] notas;
+//Constructor
+    public Alumno(String Nombre) {
+        this.Nombre = Nombre;
+        this.notas = new double [3];
+    }
+    //Implementa los siguientes métodos públicos
+    public String getNombre() {
+        return Nombre;
+    }
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+    //boolean ponerNota(int evaluacion, double nota)
+    public boolean ponerNota(int evaluacion, double nota) {
+    if (evaluacion >= 1 && evaluacion <= 3 && nota >= 1 && nota <= 10) {
+        notas[evaluacion - 1] = nota; 
+        return true;
+    } else {
+        return false;}
+    }//boolean borrarNota(int evaluacion).
+    public boolean borrarNota(int evaluacion){
+    if (evaluacion >= 1 && evaluacion <= 3) {
+        notas[evaluacion - 1] = 0; //0
+        return true;
+    } else {
+        return false;}
+    }//notas
+    public int numeroNotas() {
+    int contadorNotas = 0;
+    for (double nota : notas) {
+        if (nota >= 0) { 
+            contadorNotas++;}
+    }
+    return contadorNotas;
+    }//NotaMaxima
+    public double notaMaxima() {
+    double notaMaxima = -1; 
+    for (double nota : notas) {
+        if (nota > notaMaxima) {
+            notaMaxima = nota;}
+    }
+    return notaMaxima;
+    }//#notas
+    public boolean tieneNota(int evaluacion) {
+    if (evaluacion >= 1 && evaluacion <= 3) {
+        return notas[evaluacion - 1] != 0; 
+    } else {
+        return false;}
+    }
+    public double getNota(int evaluacion) {
+    if (evaluacion >= 1 && evaluacion <= 3) {
+        return notas[evaluacion - 1];
+    } else {
+        return -1;}
+    }
+}
